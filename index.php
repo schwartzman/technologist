@@ -14,6 +14,9 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
         <script type="text/javascript" src="/lib/js/jquery.animate-colors-min.js"></script>
         <script type="text/javascript" src="/lib/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src="//use.typekit.net/yxs2cfa.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
         <style type="text/css">
             .box {
                 height: <?=$basebox?>px;
@@ -49,7 +52,7 @@
     <body>
         <div id="head">
             <img src="/img/logo.png" alt="Anthony SCHWARTZMAN Interactive">
-            <div><span class="breaker">php &middot; python &middot; mysql &middot; apache &middot; bash &middot; </span>javascript &middot; jquery &middot; ajax &middot; sass+bourbon</div>
+            <div><span class="breaker">php &middot; mysql &middot; apache &middot; bash &middot; </span>javascript &middot; jquery &middot; ember &middot; sass+bourbon</div>
         </div><!-- #head -->
         <div id="boxes">
             <?php foreach ($folios as $folio) : ?>

@@ -1,0 +1,201 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background: #595959;
+	font-family: "camingodos-web", Arial, Verdana, sans-serif;
+	margin: 20px 40px;
+}
+
+#head {
+	margin-bottom: 18px;
+	position: relative;
+	text-align: center;
+	img {
+		max-width: 100%;
+	}
+	div {
+		font-size: 12px;
+		font-family: 'futura-pt';
+		font-weight: 300;
+		color: white;
+		margin-top: 3px;
+	}
+	.breaker {
+		display: block;
+	}
+}
+
+@media only screen and (min-width: 440px) {
+	#head div {
+		font-size: 14px;
+	}
+}
+
+@media only screen and (min-width: 500px) {
+	#head .breaker {
+		display: inline;
+	}
+}
+
+@media only screen and (min-width: 960px) {
+	#head {
+		text-align: left;
+		margin-bottom: 15px;
+		div {
+			font-size: 15px;
+			position: absolute;
+			top: 0;
+			right: 0;
+			margin: 0;
+		}
+	}
+}
+
+/* @group boxes */
+
+#boxes {
+		margin: 0 auto;
+}
+
+.box#open {
+		cursor: default;
+		background-image: none;
+}
+
+.overbox {
+		float: left;
+		margin: 0 10px 10px 0;
+		position: relative;
+		&:last-of-type {
+			.box {
+				background-image: none;
+			}
+		}
+}
+.box {
+		overflow: hidden;
+		border: 1px solid #cbcbcb;
+		font-size: 18px;
+		text-align: left;
+		background: whitesmoke url(/img/loader.gif) no-repeat center center;
+		cursor: pointer;
+		position: relative;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+}
+
+.desc {
+		position: absolute;
+		top: 160px;
+		margin: 0 20px;
+		opacity: 0;
+}
+
+.undone {
+		border-style: dashed;
+}
+
+/* @end */
+
+/* @group stuffing */
+
+img.thumb {
+		display: block;
+		margin: 12px;
+		position: relative;
+		z-index: auto;
+}
+img.full {
+		opacity: 0;
+		top: 20px;
+		left: 20px;
+		position: absolute;
+		width: 160px;
+		z-index: 100;
+}
+
+.meta img {
+		display: block;
+		margin-bottom: 10px;
+}
+
+
+/* @end */
+
+/* @group UI elements */
+
+.closy {
+		position: absolute;
+		top: 4px;
+		right: 4px;
+		cursor: pointer;
+		opacity: 0;
+		display: none;
+		z-index: auto;
+}
+
+/* @end */
+
+/* @group typography */
+
+h1 {
+		font-size: 20px;
+		color: #666;
+		margin-bottom: 5px;
+		font-weight: 400;
+}
+
+.progress {
+		font-style: italic;
+		font-weight: normal;
+}
+
+p,
+a.go,
+.arrow {
+	font-size: 13px;
+	font-weight: 300;
+}
+
+p {
+	color: #666;
+	max-height: 70px;
+	overflow: hidden;
+	line-height: 1.5em;
+	a {
+		color: #7f7f7f;
+		text-decoration: none;
+		font-weight: 400;
+	}
+}
+
+.meta p {
+	max-height: none;
+	margin-top: 1em;
+}
+
+a,
+a.go {
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+a.go,
+.arrow {
+	text-decoration: none;
+	font-style: italic;
+}
+
+a.go {
+	color: #7f0c01;
+}
+
+.arrow {
+	color: #666;
+	padding-right: 3px;
+}
