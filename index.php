@@ -14,6 +14,7 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
         <script type="text/javascript" src="/lib/js/jquery.animate-colors-min.js"></script>
         <script type="text/javascript" src="/lib/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src="/lib/js/jquery.hotkeys.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/yxs2cfa.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -61,6 +62,6 @@
             </div><!-- .overbox -->
             <?php endforeach; ?>
         </div><!-- #boxes -->
-        <script type="text/javascript" src="/lib/js/interface.js"></script>
+        <script type="text/javascript" src="/lib/js/interface.min.js"></script>
     </body>
 </html>
