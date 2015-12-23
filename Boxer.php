@@ -5,8 +5,8 @@ class Boxer
         echo '<div class="box';
         echo ($this->done != 1) ? ' undone' : '';
         echo '">';
-        echo ($this->slug != 'meta') ? '<img src="/img/full/'.$this->slug.'.png" alt="'.$this->title.'" class="full" />' : '';
-        echo '<img src="/img/thumb/'.$this->slug.'.png" alt="'.$this->title.'" class="thumb" />';
+        echo ($this->slug != 'meta') ? '<img src="'.CDN.'/img/full/'.$this->slug.'.png" alt="'.$this->title.'" class="full" />' : '';
+        echo '<img src="'.CDN.'/img/thumb/'.$this->slug.'.png" alt="'.$this->title.'" class="thumb" />';
         echo '<div class="desc';
         echo ($this->slug == 'meta') ? ' meta' : '';
         echo '""><h1>';

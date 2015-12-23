@@ -6,15 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Anthony SCHWARTZMAN Interactive</title>
         <link rel="icon" type="image/x-icon" href="/img/favicon.ico?v=2">
-        <link rel="stylesheet" href="/lib/style.css">
+        <link rel="stylesheet" href="<?=CDN?>/lib/style.css">
         <?php $basebox = 185; ?>
         <script type="text/javascript">
             var basebox = <?=$basebox?>;
         </script>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7/jquery.min.js"></script>
-        <script type="text/javascript" src="/lib/js/jquery.animate-colors-min.js"></script>
-        <script type="text/javascript" src="/lib/js/jquery.masonry.min.js"></script>
-        <script type="text/javascript" src="/lib/js/jquery.hotkeys.min.js"></script>
         <script type="text/javascript" src="//use.typekit.net/yxs2cfa.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
@@ -25,6 +22,7 @@
             }
         </style>
         <?php
+        define('CDN', 'http://d6ty9yhb6acyd.cloudfront.net');
         include 'lib/config.php';
         include 'Boxer.php';
         $mysqli = new mysqli($host,$username,$passwd,$dbname);
@@ -52,7 +50,7 @@
     </head>
     <body>
         <div id="head">
-            <img src="/img/logo.png" alt="Anthony SCHWARTZMAN Interactive">
+            <img src="<?=CDN?>/img/logo.png" alt="Anthony SCHWARTZMAN Interactive">
             <div><span class="breaker">php &middot; mysql &middot; apache &middot; bash &middot; </span>javascript &middot; greensock &middot; jquery &middot; sass</div>
         </div><!-- #head -->
         <div id="boxes">
@@ -62,6 +60,9 @@
             </div><!-- .overbox -->
             <?php endforeach; ?>
         </div><!-- #boxes -->
-        <script type="text/javascript" src="/lib/js/interface.min.js"></script>
+        <script type="text/javascript" src="<?=CDN?>/lib/js/jquery.animate-colors-min.js"></script>
+        <script type="text/javascript" src="<?=CDN?>/lib/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src="<?=CDN?>/lib/js/jquery.hotkeys.min.js"></script>
+        <script type="text/javascript" src="<?=CDN?>/lib/js/interface.min.js"></script>
     </body>
 </html>
