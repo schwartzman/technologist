@@ -54,8 +54,6 @@ body {
 	}
 }
 
-/* @group boxes */
-
 #boxes {
 		margin: 0 auto;
 }
@@ -83,9 +81,6 @@ body {
 		background: whitesmoke url(/img/loader.gif) no-repeat center center;
 		cursor: pointer;
 		position: relative;
-		-webkit-border-radius: 5px;
-		-moz-border-radius: 5px;
-		border-radius: 5px;
 }
 
 .desc {
@@ -99,34 +94,27 @@ body {
 		border-style: dashed;
 }
 
-/* @end */
-
-/* @group stuffing */
-
-img.thumb {
-		display: block;
-		margin: 12px;
-		position: relative;
-		z-index: auto;
-}
-img.full {
-		opacity: 0;
-		top: 20px;
-		left: 20px;
-		position: absolute;
-		width: 160px;
-		z-index: 100;
+img {	
+	&.thumb {
+			display: block;
+			margin: 12px;
+			position: relative;
+			z-index: auto;
+	}
+	&.full {
+			opacity: 0;
+			top: 20px;
+			left: 20px;
+			position: absolute;
+			width: 160px;
+			z-index: 100;
+	}
 }
 
 .meta img {
 		display: block;
 		margin-bottom: 10px;
 }
-
-
-/* @end */
-
-/* @group UI elements */
 
 .closy {
 		position: absolute;
@@ -137,10 +125,6 @@ img.full {
 		display: none;
 		z-index: auto;
 }
-
-/* @end */
-
-/* @group typography */
 
 h1 {
 		font-size: 20px;
