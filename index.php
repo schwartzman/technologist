@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <?php define('CDN', 'http://d6ty9yhb6acyd.cloudfront.net'); ?>
         <meta charset='utf-8'>
         <meta name="description" content="Superlative web development. Anything is possible.">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +23,6 @@
             }
         </style>
         <?php
-        define('CDN', 'http://d6ty9yhb6acyd.cloudfront.net');
         include 'lib/config.php';
         include 'Boxer.php';
         $mysqli = new mysqli($host,$username,$passwd,$dbname);
