@@ -51,7 +51,7 @@
     <body>
         <div id="head">
             <img src="<?=CDN?>/img/logo.png" alt="Anthony SCHWARTZMAN Interactive">
-            <div><span class="breaker">php &middot; mysql &middot; apache &middot; bash &middot; </span>javascript &middot; greensock &middot; jquery &middot; sass</div>
+            <div><span class="breaker">node &middot; javascript &middot; php &middot; twig &middot; sass &middot; </span>mariadb &middot; aws &middot; apache &middot; mocha &middot; chai</div>
         </div><!-- #head -->
         <div id="boxes">
             <?php foreach ($folios as $folio) : ?>
