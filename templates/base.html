@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    {#
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-2234212-5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-2234212-5');
+    </script> #}
+    <meta charset="utf-8">
+    <meta name="description" content="Superlative web development. Anything is possible.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Anthony SCHWARTZMAN Interactive</title>
+    <link rel="icon" type="image/x-icon" href="/static/img/favicon.ico?v=2">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,800|Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+
+<body>
+    <div class="head">
+        <a href="/"><span class="title">Anthony <span class="oomph">SCHWARTZMAN</span> Interactive</span></a>
+        <div><span class="breaker">Senior Full Stack Web Developer<span class="sep">&middot;</span></span>Aspiring Machine Learning Engineer</div>
+    </div>
+    <div class="content {{ g.curr }}">
+        {% block content %}{{ e404 if e404 }}{% endblock %}
+    </div>
+    <div class="foot">
+        <div class="more">
+            <a href="https://github.com/schwartzman" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/aschwartzman/" target="_blank" title="LinkedIn"><i class="fa fa-fw fa-linkedin"></i></a>
+            <a href="https://stackoverflow.com/story/anthonyschwartzman" target="_blank" title="Stack Overflow"><i class="fa fa-fw fa-stack-overflow"></i></a>
+        </div>
+        <div class="more">
+            <a href="/tools/dicer" title="dicer"><i class="fa fa-fw fa-key"></i></a>
+            <a href="/tools/hasher" title="hasher"><i class="fa fa-fw fa-lock"></i></a>
+            <a href="/sites/" title="portfolio archive"><i class="fa fa-fw fa-briefcase"></i></a>
+        </div>
+    </div>
+    {% block footscripts %}{% endblock %}
+</body>
+
+</html>

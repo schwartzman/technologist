@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block content %}
+<p class="sites-blurb">I've been focused on long-term projects the last few years and consequently haven't built many new sites lately. A few of these top-most ones are recent, but the rest are ancient and offline or unmaintained. The interface is still fun, though. Enjoy!</p>
+<div id="boxes">
+{% for f in folios %}
+	<div class="overbox">
+		<div class="box">
+			<img src="/static/img/full/{{ f.slug }}.png" alt="{{ f.title }}" class="full">
+			<img src="/static/img/thumb/{{ f.slug }}.png" alt="{{ f.title }}" class="thumb">
+			<div class="desc">
+				<h1>{{ f.title }}</h1>
+				<p>{{ f.blurb|safe }}
+					{% if f.link or f.source %}<br>{% endif %}
+					{% if f.source %}
+						<a href="{{ f.source }}" class="source" target="_blank" title="GitHub"><i class="fa fa-github"></i></a>
+					{% endif %}
+					{% if f.link %}
+						{% set prot = 'https' if f.ssl else 'http' %}
+						<a href="{{ prot }}://{{ f.link }}" target="_blank">{{ f.link }}</a>
+					{% endif %}
+				</p>
+			</div>
+		</div>{# .box #}
+		<span class="closy">
+			<span class="fa-stack">
+			    <i class="fa fa-circle fa-stack-1x bg"></i>
+			    <i class="fa fa-times-circle-o fa-stack-1x fr"></i>
+			</span>
+		</span>
+	</div>{# .overbox #}
+{% endfor %}
+</div>{# .boxes #}
+{% endblock %}
+
+{% block footscripts %}
+	<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/masonry-layout@4/dist/masonry.pkgd.min.js,npm/jquery-hotkeys@0"></script>
+    <script type="text/javascript" src="/static/js/folio-interface-min.js"></script>
+{% endblock %}
