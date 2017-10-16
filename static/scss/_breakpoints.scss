@@ -1,0 +1,49 @@
+@media only screen and (min-width: 440px) {
+    .head div {
+        // font-size: 14px;
+    }
+}
+
+@media only screen and (min-width: 500px) {
+    .head {
+        .breaker,
+        .sep {
+            display: inline;
+        }
+    }
+    .foot {
+		display: flex;
+		justify-content: space-between;
+        .more {
+        	display: inline-block;
+            &+.more {
+                text-align: right;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 960px) {
+    .head {
+        text-align: left;
+        margin-bottom: 15px;
+        div {
+            // font-size: 15px;
+            position: absolute;
+            line-height: 1;
+            top: 0;
+            right: 0;
+            margin: 0;
+        }
+    }
+    .content {
+        margin-top: 3rem;
+    }
+    .content.index,
+    .sites-blurb,
+    .foot {
+        max-width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

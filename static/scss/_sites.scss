@@ -1,0 +1,88 @@
+.content.sites {
+
+	margin-top: 1rem;
+
+	#boxes {
+		margin: 2rem auto 0;
+	}
+
+	.box.open {
+		cursor: default;
+	}
+
+	.overbox {
+		margin-bottom: 10px;
+		position: relative;
+	}
+
+	.box {
+		height: 184px;
+		width: 184px;
+		overflow: hidden;
+		background: whitesmoke url(../img/loader.gif) no-repeat center center;
+		cursor: pointer;
+		position: relative;
+		color: $g35;
+		.desc {
+			position: absolute;
+			top: 160px;
+			margin: 0 20px;
+			opacity: 0;
+		}
+		p {
+			font-size: 0.85rem;
+			max-height: 72px;
+			overflow: hidden;
+		}
+		a {
+			color: inherit;
+			font-weight: 400;
+		}
+		h1 {
+			margin: 0.5em 0 0.3em;
+			font-family: 'Open Sans Condensed', sans-serif;
+			font-size: 1.6rem;
+			font-weight: 300;
+		}
+		a.source {
+			font-size: 1.5em;
+			padding-right: 0.5rem;
+			vertical-align: middle;
+		}
+	}
+
+	img {
+		&.thumb {
+			display: block;
+			margin: 12px auto auto;
+			position: relative;
+			z-index: auto;
+		}
+		&.full {
+			opacity: 0;
+			top: 20px;
+			left: 20px;
+			position: absolute;
+			width: 160px;
+			z-index: 100;
+		}
+	}
+
+	.closy {
+		position: absolute;
+		top: -23px;
+		right: -23px;
+		cursor: pointer;
+		opacity: 0;
+		display: none;
+		z-index: 1;
+		font-size: 1.7rem;
+		.fr {
+			color: $g20;
+		}
+		.bg {
+			color: white;
+		}
+	}
+
+} // .content.folio

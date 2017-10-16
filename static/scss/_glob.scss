@@ -1,0 +1,90 @@
+* {
+	// all the things!
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	background: $g35;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	color: white;
+	font-weight: 300;
+	padding: 1.4rem 2.7rem 0;
+}
+
+html, body {
+	height: 100%;
+}
+
+.head {
+	margin-bottom: 1.2rem;
+	position: relative;
+	text-align: center;
+	text-transform: uppercase;
+	a:hover {
+		text-decoration: none;
+		color: inherit !important;
+	}
+	.title {
+		font-size: 1.3rem;
+		line-height: 0;
+		.oomph {
+			font-weight: 800;
+		}
+	}
+	div {
+		font-family: 'Open Sans Condensed', sans-serif;
+		margin-top: 0.5rem;
+	}
+	.breaker {
+		display: block;
+	}
+	.sep {
+		padding: 0 0.8em;
+		display: none;
+	}
+}
+
+.content {
+	flex: 1 0 auto;
+	margin-top: 1.5rem;
+}
+
+.foot {
+	flex-shrink: 0;
+	width: 100%;
+	margin: 3rem auto;
+	.more {
+		a {
+			color: $g65;
+			& + a {
+				margin-left: 0.5rem;
+			}
+		}
+		.fa {
+			font-size: 1.5rem;
+			&:hover {
+				color: inherit;
+			}
+		}
+	}
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	&:hover {
+		color: $hit !important;
+		text-decoration: underline;
+	}
+}
+
+p {
+	line-height: 1.4em;
+	& + p {
+		margin-top: 1rem;
+	}
+}
