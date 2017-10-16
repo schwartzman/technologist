@@ -1,5 +1,4 @@
-config.php
-style.scssc
 style.css
-interface.min.js
-*.codekit
+*-min.js
+prepros-6.config
+__pycache__
