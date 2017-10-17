@@ -1,5 +1,4 @@
 * {
-	// all the things!
 	box-sizing: border-box;
 	margin: 0;
 }
@@ -12,7 +11,7 @@ body {
 	font-size: 15px;
 	color: white;
 	font-weight: 300;
-	padding: 1.4rem 2.7rem 0;
+	padding: 1.4rem 2.5rem 0;
 }
 
 html, body {
@@ -21,7 +20,6 @@ html, body {
 
 .head {
 	margin-bottom: 1.2rem;
-	position: relative;
 	text-align: center;
 	text-transform: uppercase;
 	a:hover {
@@ -30,27 +28,28 @@ html, body {
 	}
 	.title {
 		font-size: 1.3rem;
-		line-height: 0;
+		line-height: 1.2;
 		.oomph {
+			display: block;
 			font-weight: 800;
 		}
 	}
-	div {
+	.tag {
 		font-family: 'Open Sans Condensed', sans-serif;
-		margin-top: 0.5rem;
+		margin-top: 1rem;
+		line-height: 1.4;
 	}
 	.breaker {
 		display: block;
 	}
 	.sep {
-		padding: 0 0.8em;
 		display: none;
 	}
 }
 
 .content {
 	flex: 1 0 auto;
-	margin-top: 1.5rem;
+	margin-top: 1rem;
 }
 
 .foot {
@@ -58,6 +57,10 @@ html, body {
 	width: 100%;
 	margin: 3rem auto;
 	.more {
+		text-align: center;
+		& + .more {
+			margin-top: 2rem;
+		}
 		a {
 			color: $g65;
 			& + a {
