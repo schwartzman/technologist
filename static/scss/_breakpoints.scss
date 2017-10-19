@@ -15,10 +15,6 @@
 }
 
 @media only screen and (min-width: 760px) {
-    .content {
-        margin-top: 1.5rem;
-    }
-
     .head {
         .title,
         .tag {
@@ -40,26 +36,25 @@
             padding: 0 0.8em;
         }
     }
+    .content {
+        margin-top: 1.5rem;
+    }
 }
 
 @media only screen and (min-width: 960px) {
     .head {
         display: flex;
         justify-content: space-between;
-        flex-shrink: 0;
         align-items: center;
         .tag {
             margin: auto 0;
         }
     }
-
     .content {
         margin-top: 3rem;
     }
-
-    .content.index,
-    .sites-blurb,
-    .foot {
+    .wrap {
+        width: 100%;
         max-width: 75%;
         margin-left: auto;
         margin-right: auto;
@@ -67,9 +62,7 @@
 }
 
 @media only screen and (min-width: 1100px) {
-    .content.index,
-    .sites-blurb,
-    .foot {
+    .wrap {
         max-width: 66%;
     }
 }

@@ -1,0 +1,92 @@
+.content.tools {
+	h1 {
+		text-align: center;
+	}
+	input[type="text"], input[type="number"], textarea {
+		font-family: 'Source Code Pro', monospace;
+		font-weight: 400;
+		padding: 0.3rem 0.4rem;
+	}
+	form {
+		width: 100%;
+		input[type="number"], input[type="submit"], textarea {
+			margin: 0 auto;
+			display: block;
+		}
+		textarea {
+			width: 100%;
+			height: 5rem;
+		}
+		.radiobox {
+			display: flex;
+			justify-content: center;
+		}
+		.radios {
+			.row {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				& + .row {
+					margin-top: 0.5rem;
+				}
+				* {
+					flex-shrink: 0;
+					line-height: 1;
+				}
+			}
+			input[type="radio"] {
+				margin-left: 0.5rem;
+			}
+		}
+		.radiobox, input[type="submit"] {
+			margin-top: 1.4rem;
+		}
+	}
+	.res {
+		display: none;
+		margin-top: 2rem;
+		label {
+			display: block;
+			font-size: 1.1rem;
+			font-weight: 400;
+		}
+		input {
+			width: 100%;
+			display: block;
+			margin-bottom: 0.3rem;
+			& + label {
+				margin-top: 0.6rem;
+			}
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+	&.dicer {
+		.res {
+			label {
+				display: none;
+			}
+		}
+	}
+	& ~ .foot-extra {
+		flex: 0 0 auto;
+		text-align: center;
+		margin-top: 4rem;
+	}
+}
+
+.content.tool-ind {
+	text-align: center;
+	font-size: 2rem;
+	a {
+		line-height: 1.5;
+		margin: 0 1em;
+		.fa {
+			// display: none;
+		}
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}

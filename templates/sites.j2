@@ -1,6 +1,6 @@
 {% extends 'base.j2' %}
 {% block content %}
-<p class="sites-blurb">I've been focused on long-term projects the last few years and consequently haven't built many new sites lately. A few of these top-most ones are recent, but the rest are ancient and offline or unmaintained. The interface is still fun, though. Enjoy!</p>
+<p class="sites-blurb wrap">I've been focused on long-term projects the last few years and consequently haven't built many new sites lately. A few of these top-most ones are recent, but the rest are ancient and offline or unmaintained. The interface is still fun, though. Enjoy!</p>
 <div id="boxes">
 {% for f in folios %}
 	<div class="overbox">
@@ -32,7 +32,7 @@
 </div>{# .boxes #}
 {% endblock %}
 
-{% block footscripts %}
+{% block foot_scripts %}
 	<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/masonry-layout@4/dist/masonry.pkgd.min.js,npm/jquery-hotkeys@0"></script>
     <script type="text/javascript" src="/static/js/sites-interface-min.js"></script>
 {% endblock %}
