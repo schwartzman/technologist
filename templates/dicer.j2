@@ -1,0 +1,34 @@
+{% extends 'base.j2' %}
+{% block content %}
+<h1>Dicer</h1>
+<form action="" class="{{ g.curr }}">
+	<input type="number" min="1" max="100" value="3">
+	<div class="radiobox">
+		<div class="radios">
+			<div class="row">
+				<label for="rad1">Diceware</label><input name="flavor" type="radio" id="rad1" value="diceware8k" checked>
+			</div>
+			<div class="row">
+				<label for="rad2">Eyeware</label><input name="flavor" type="radio" id="rad2" value="eyeware8k" >
+			</div>
+			<div class="row">
+				<label for="rad3">EFF</label><input name="flavor" type="radio" id="rad3" value="eff-large" >
+			</div>
+		</div>
+	</div>
+	<input type="submit" value="dice!">
+</form>
+<div class="res wrap slumber"></div>
+{% endblock %}
+
+{% block foot_extra %}
+<div class="foot-extra wrap">
+	<div class="hush">Dicer is an automation of <a href="http://world.std.com/~reinhold/diceware.html" target="_blank">Diceware</a>. It uses the <a href="http://world.std.com/~reinhold/dicewarefaq.html#computer">Diceware 8k</a>, <a href="https://github.com/nightsense/eyeware">Eyeware 8k</a>, and <a href="https://www.eff.org/deeplinks/2016/07/new-wordlists-random-passphrases">EFF Large</a> word lists.<br />
+	The source code is available for inspection on <a href="https://github.com/schwartzman/portfolio" target="_blank">GitHub</a>.</div>
+</div>
+{% endblock %}
+
+{% block foot_scripts %}
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/static/js/tools-interface.js"></script>
+{% endblock %}
