@@ -1,4 +1,5 @@
-style.css
+*.css
 *-min.js
 prepros-6.config
 __pycache__
+node_modules

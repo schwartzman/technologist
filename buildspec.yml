@@ -1,0 +1,18 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - npm i -g npx autoprefixer@6 node-sass@4 postcss-cli@3
+  build:
+    commands:
+      - echo Build started on `date`
+      - cd static
+      - npx node-sass --output-style compressed scss/style.scss css/style.css
+      - npx postcss css/style.css -o css/style.css --use autoprefixer --no-map
+  post_build:
+    commands:
+      - echo Build completed on `date`
+artifacts:
+  files:
+    - '**/*'

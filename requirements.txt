@@ -5,3 +5,4 @@ itsdangerous==0.24
 Jinja2==2.9.6
 MarkupSafe==1.0
 Werkzeug==0.12.2
+git+git://github.com/python/cpython/blob/3.6/Lib/secrets.py#egg=technologist
