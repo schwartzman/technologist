@@ -1,4 +1,15 @@
 @media only screen and (min-width: 600px) {
+    .head {
+        .title {
+            line-height: 1;
+            .oomph {
+                display: inline;
+            }
+        }
+        .tag {
+            margin-top: 0.5rem;
+        }
+    }
     .foot {
         display: flex;
         justify-content: space-between;
@@ -16,17 +27,8 @@
 
 @media only screen and (min-width: 760px) {
     .head {
-        .title,
         .tag {
             line-height: 1;
-        }
-        .title {
-            .oomph {
-                display: inline;
-            }
-        }
-        .tag {
-            margin-top: 0.5rem;
         }
         .breaker,
         .sep {
