@@ -4,12 +4,14 @@ phases:
   install:
     commands:
       - echo Build started on `date`
-      - npm i -g npx autoprefixer@6 node-sass@4 postcss-cli@3
+      - npm i -g npx autoprefixer@6 node-sass@4 postcss-cli@3 uglify-js@3
   build:
     commands:
       - cd static
       - npx node-sass --output-style compressed scss/style.scss css/style.css
       - npx postcss css/style.css -o css/style.css --use autoprefixer --no-map
+      - npx uglify-js js/sites-interface.js --compress -o js/sites-interface.min.js
+      - npx uglify-js js/tools-interface.js --compress -o js/tools-interface.min.js
   post_build:
     commands:
       - echo Build completed on `date`
