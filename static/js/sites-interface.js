@@ -46,7 +46,9 @@ function close() {
 		obox = target.parent();
 		obox.width(m.basebox).height(m.basebox).css('z-index', 'auto');
 		closy.css({'display': 'none', 'opacity': 0});
-		target.animate({width: m.basebox+'px', height: m.basebox+'px'},  a.time).removeClass('open');
+		target.animate({width: m.basebox+'px', height: m.basebox+'px'},  a.time, function() {
+			target.removeClass('open');
+		});
 		target.children('img.full').animate({opacity: 0, width: '160px'},  a.time);
 		target.children('img.thumb').animate({top: 0, left: 0, width: '160px', opacity: 1}, a.time);
 		target.children('div.desc').animate({top: '160px', opacity: 0}, a.time);

@@ -8,6 +8,9 @@
 
 	.box.open {
 		cursor: default;
+		&:before {
+			display: none;
+		}
 	}
 
 	.overbox {
@@ -19,10 +22,23 @@
 		height: 184px;
 		width: 184px;
 		overflow: hidden;
-		background: whitesmoke url(../img/loader.gif) no-repeat center center;
+		background: whitesmoke;
 		cursor: pointer;
 		position: relative;
 		color: $g35;
+		&:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			line-height: 184px;
+			text-align: center;
+			content: "\f1ce";
+			font-family: FontAwesome;
+			font-size: 2.5rem;
+			animation: fa-spin 2s infinite linear;
+		}
 		.desc {
 			position: absolute;
 			top: 160px;
