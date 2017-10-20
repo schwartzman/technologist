@@ -6,8 +6,9 @@ from flask import Flask
 from flask import Markup
 from flask import g
 from flask import render_template
-from secrets import choice
+from random import SystemRandom
 
+choice = SystemRandom().choice
 app = Flask(__name__)
 
 
