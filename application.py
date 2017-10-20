@@ -16,7 +16,7 @@ sslify = SSLify(app, permanent=True)
 
 @app.context_processor
 def set_cdn():
-    cdn = '//d22grsu0dpurf8t.cloudfront.net' if not app.debug else ''
+    cdn = '//d22gru0dpurf8t.cloudfront.net' if not app.debug else ''
     return {'cdn': cdn}
 
 
