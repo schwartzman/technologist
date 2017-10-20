@@ -6,19 +6,21 @@ from flask import Flask
 from flask import Markup
 from flask import g
 from flask import render_template
+from flask_sslify import SSLify
 from random import SystemRandom
 
 choice = SystemRandom().choice
-application = Flask(__name__)
+app = Flask(__name__)
+sslify = SSLify(app, permanent=True)
 
 
-@application.route('/')
+@app.route('/')
 def index():
     g.curr = 'index'
     return render_template('index.j2')
 
 
-@application.route('/sites/')
+@app.route('/sites/')
 def sites():
     g.curr = 'sites'
     con = sqlite3.connect('db.sqlite')
@@ -33,13 +35,13 @@ def sites():
     return render_template('sites.j2', folios=folios)
 
 
-@application.route('/tools/')
+@app.route('/tools/')
 def tools():
     g.curr = 'tool-ind'
     return render_template('tools.j2')
 
 
-@application.route('/tools/<tool>/')
+@app.route('/tools/<tool>/')
 def tool(tool):
     g.curr = ' '.join(['tools', tool])
     if tool in ['dicer', 'hasher']:
@@ -48,7 +50,7 @@ def tool(tool):
         return page_not_found()
 
 
-@application.route('/tools/dicer/<flavor>/<int:length>')
+@app.route('/tools/dicer/<flavor>/<int:length>')
 def dicer(flavor, length):
     with open('lists/' + flavor + '.txt') as f:
         words = f.read().splitlines()
@@ -61,7 +63,7 @@ def dicer(flavor, length):
     return json.dumps(phrases)
 
 
-@application.route('/tools/hasher/<path:victim>')
+@app.route('/tools/hasher/<path:victim>')
 def hasher(victim):
     venc = victim.encode('utf-8')
     hashes = {}
@@ -70,9 +72,12 @@ def hasher(victim):
     return json.dumps(hashes)
 
 
-@application.errorhandler(404)
+@app.errorhandler(404)
 def page_not_found():
     g.curr = 'err'
     return render_template('base.j2',
                            e404=Markup('<img src="https://http.cat/404.jpg">')
                            ), 404
+
+# for elastic beanstalk
+application = app
