@@ -14,6 +14,12 @@ app = Flask(__name__)
 sslify = SSLify(app, permanent=True)
 
 
+@app.context_processor
+def set_cdn():
+    cdn = '//d22grsu0dpurf8t.cloudfront.net' if not app.debug else ''
+    return {'cdn': cdn}
+
+
 @app.route('/')
 def index():
     g.curr = 'index'
@@ -78,6 +84,7 @@ def page_not_found():
     return render_template('base.j2',
                            e404=Markup('<img src="https://http.cat/404.jpg">')
                            ), 404
+
 
 # for elastic beanstalk
 application = app
