@@ -9,16 +9,16 @@ from flask import render_template
 from random import SystemRandom
 
 choice = SystemRandom().choice
-app = Flask(__name__)
+application = Flask(__name__)
 
 
-@app.route('/')
+@application.route('/')
 def index():
     g.curr = 'index'
     return render_template('index.j2')
 
 
-@app.route('/sites/')
+@application.route('/sites/')
 def sites():
     g.curr = 'sites'
     con = sqlite3.connect('db.sqlite')
@@ -33,13 +33,13 @@ def sites():
     return render_template('sites.j2', folios=folios)
 
 
-@app.route('/tools/')
+@application.route('/tools/')
 def tools():
     g.curr = 'tool-ind'
     return render_template('tools.j2')
 
 
-@app.route('/tools/<tool>/')
+@application.route('/tools/<tool>/')
 def tool(tool):
     g.curr = ' '.join(['tools', tool])
     if tool in ['dicer', 'hasher']:
@@ -48,7 +48,7 @@ def tool(tool):
         return page_not_found()
 
 
-@app.route('/tools/dicer/<flavor>/<int:length>')
+@application.route('/tools/dicer/<flavor>/<int:length>')
 def dicer(flavor, length):
     with open('lists/' + flavor + '.txt') as f:
         words = f.read().splitlines()
@@ -61,7 +61,7 @@ def dicer(flavor, length):
     return json.dumps(phrases)
 
 
-@app.route('/tools/hasher/<path:victim>')
+@application.route('/tools/hasher/<path:victim>')
 def hasher(victim):
     venc = victim.encode('utf-8')
     hashes = {}
@@ -70,7 +70,7 @@ def hasher(victim):
     return json.dumps(hashes)
 
 
-@app.errorhandler(404)
+@application.errorhandler(404)
 def page_not_found():
     g.curr = 'err'
     return render_template('base.j2',
