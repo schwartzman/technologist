@@ -14,6 +14,8 @@ phases:
       - npx uglify-js js/tools-interface.js --compress -o js/tools-interface.min.js
   post_build:
     commands:
+      - cd ..
+      - echo static/scss buildspec.yml .gitignore LICENSE | xargs rm -r
       - echo Build completed on `date`
 artifacts:
   files:
