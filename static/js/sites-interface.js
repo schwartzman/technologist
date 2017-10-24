@@ -11,13 +11,15 @@ var m = {
 m.bigbox = m.basebox * 3 + m.gutter * 2;
 m.fullimg = m.bigbox - m.gutter * 4;
 
-$('#boxes').masonry({
-	itemSelector: '.overbox',
-	columnWidth: m.basebox,
-	gutter: m.gutter,
-	fitWidth: true,
-	transitionDuration: a.time/1000+'s',
-	stagger: a.fast
+$('#boxes')
+	.show()
+	.masonry({
+		itemSelector: '.overbox',
+		columnWidth: m.basebox,
+		gutter: m.gutter,
+		fitWidth: true,
+		transitionDuration: a.time/1000+'s',
+		stagger: a.fast
 });
 
 function refresh() {
