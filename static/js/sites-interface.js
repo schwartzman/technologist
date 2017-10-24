@@ -75,19 +75,3 @@ $('.box').click(function(){
 $(document).on('keydown', null, 'esc', function(){
 	close();
 });
-
-$(document).on('keydown', null, 'right down', function(){
-	victim = $('.open').parent().next();
-	close();
-	if (victim.length) {
-		open(victim.children('.box'));
-	}
-});
-
-$(document).on('keydown', null, 'left up', function(){
-	victim = $('.open').parent().prev();
-	close();
-	if (victim.length) {
-		open(victim.children('.box'));
-	}
-});
