@@ -6,12 +6,10 @@ from flask import Flask
 from flask import Markup
 from flask import g
 from flask import render_template
-from flask_sslify import SSLify
 from random import SystemRandom
 
 choice = SystemRandom().choice
 app = Flask(__name__)
-sslify = SSLify(app, permanent=True)
 
 
 @app.context_processor
