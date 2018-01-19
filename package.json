@@ -21,7 +21,7 @@
     "build:py": "pip freeze > requirements.txt",
     "build": "npm run build:style && npm run build:script && npm run build:bust && npm run build:py",
     "deploy:lambda": "zappa update production",
-    "deploy:s3": "aws s3 sync static s3://901606-technologist-static/static --exclude scss/* --exclude js/*",
+    "deploy:s3": "aws s3 sync static s3://anthonyschwartzman.net-static/static --exclude scss/* --exclude js/*",
     "deploy": "npm run deploy:lambda && npm run deploy:s3"
   }
 }
