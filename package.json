@@ -1,27 +1,28 @@
 {
-  "name": "technologist",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/schwartzman/technologist.git"
-  },
-  "author": "Anthony Schwartzman",
-  "license": "MIT",
-  "homepage": "https://github.com/schwartzman/technologist#readme",
-  "devDependencies": {
-    "autoprefixer": "^7.2.5",
-    "node-sass": "^4.7.2",
-    "postcss-cli": "^4.1.1",
-    "uglify-js": "^3.3.7"
-  },
-  "scripts": {
-    "build:style": "node-sass --output-style compressed static/scss/style.scss static/dist/style.css",
-    "postbuild:style": "postcss static/dist/style.css -o static/dist/style.css --use autoprefixer --no-map",
-    "build:script": "uglifyjs static/js/sites-interface.js --compress -o static/dist/sites-interface.min.js && uglifyjs static/js/tools-interface.js --compress -o static/dist/tools-interface.min.js",
-    "build:bust": "git rev-parse HEAD | cut -c 1-8 > revision.txt",
-    "build:py": "pip freeze > requirements.txt",
-    "build": "npm run build:style && npm run build:script && npm run build:bust && npm run build:py",
-    "deploy:lambda": "zappa update production",
-    "deploy:s3": "aws s3 sync static s3://anthonyschwartzman.net-static/static --exclude scss/* --exclude js/*",
-    "deploy": "npm run deploy:lambda && npm run deploy:s3"
-  }
+    "name": "technologist",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/schwartzman/technologist.git"
+    },
+    "author": "Anthony Schwartzman",
+    "license": "MIT",
+    "homepage": "https://github.com/schwartzman/technologist#readme",
+    "devDependencies": {
+        "autoprefixer": "^7.2.5",
+        "node-sass": "^4.7.2",
+        "postcss-cli": "^4.1.1",
+        "uglify-js": "^3.3.7"
+    },
+    "scripts": {
+        "build:style": "node-sass --output-style compressed static/scss/style.scss static/dist/style.css",
+        "postbuild:style": "postcss static/dist/style.css -o static/dist/style.css --use autoprefixer --no-map",
+        "build:script": "uglifyjs static/js/sites-interface.js --compress -o static/dist/sites-interface.min.js && uglifyjs static/js/tools-interface.js --compress -o static/dist/tools-interface.min.js",
+        "build:bust": "git rev-parse HEAD | cut -c 1-8 > revision.txt",
+        "build:py": "pip freeze > requirements.txt",
+        "build": "npm run build:style && npm run build:script && npm run build:bust && npm run build:py",
+        "deploy:lambda": "zappa update production",
+        "deploy:s3": "aws s3 sync static s3://anthonyschwartzman.net-static/static --exclude scss/* --exclude js/*",
+        "deploy": "npm run deploy:lambda && npm run deploy:s3",
+        "ship": "npm run build && npm run deploy"
+    }
 }

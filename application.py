@@ -6,9 +6,8 @@ from flask import Markup
 from flask import g
 from flask import jsonify
 from flask import render_template
-from random import SystemRandom
+from secrets import choice
 
-choice = SystemRandom().choice
 app = Flask(__name__)
 
 
