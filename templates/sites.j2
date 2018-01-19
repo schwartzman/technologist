@@ -5,8 +5,8 @@
 {% for f in folios %}
 	<div class="overbox">
 		<div class="box">
-			<img src="{{ cdn }}/static/img/full/{{ f.slug }}.png" alt="{{ f.title }}" class="full">
-			<img src="{{ cdn }}/static/img/thumb/{{ f.slug }}.png" alt="{{ f.title }}" class="thumb">
+			<img src="/static/img/full/{{ f.slug }}.png" alt="{{ f.title }}" class="full">
+			<img src="/static/img/thumb/{{ f.slug }}.png" alt="{{ f.title }}" class="thumb">
 			<div class="desc">
 				<h1>{{ f.title }}</h1>
 				<p>{{ f.blurb|safe }}
@@ -34,5 +34,5 @@
 
 {% block foot_scripts %}
 	<script type="text/javascript" src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/masonry-layout@4/dist/masonry.pkgd.min.js,npm/jquery-hotkeys@0"></script>
-    <script type="text/javascript" src="{{ cdn }}/static/js/sites-interface.min.js"></script>
+    <script type="text/javascript" src="/static/dist/sites-interface.min.js?v={{ bust }}"></script>
 {% endblock %}

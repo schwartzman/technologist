@@ -13,9 +13,10 @@ app = Flask(__name__)
 
 
 @app.context_processor
-def set_cdn():
-    cdn = '//d22gru0dpurf8t.cloudfront.net' if not app.debug else ''
-    return {'cdn': cdn}
+def set_buster():
+    with open('last-commit.txt') as f:
+        bust = f.readline()
+    return {'bust': bust}
 
 
 @app.route('/')
