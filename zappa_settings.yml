@@ -1,0 +1,8 @@
+production:
+    app_function: application.app
+    aws_region: us-east-1
+    profile_name: default
+    project_name: repo
+    runtime: python3.6
+    s3_bucket: 901606-technologist
+    project_name: technologist
