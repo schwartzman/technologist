@@ -87,7 +87,3 @@ def page_not_found():
     return render_template('base.j2',
                            e404=Markup('<img src="https://http.cat/404.jpg">')
                            ), 404
-
-
-# for elastic beanstalk
-application = app
