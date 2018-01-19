@@ -14,7 +14,7 @@ app = Flask(__name__)
 
 @app.context_processor
 def set_buster():
-    with open('last-commit.txt') as f:
+    with open('revision.txt') as f:
         bust = f.readline()
     return {'bust': bust}
 
