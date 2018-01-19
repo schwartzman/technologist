@@ -1,10 +1,10 @@
 import hashlib
-import json
 import sqlite3
 
 from flask import Flask
 from flask import Markup
 from flask import g
+from flask import jsonify
 from flask import render_template
 from random import SystemRandom
 
@@ -65,7 +65,9 @@ def dicer(flavor, length):
         'sp': ' '.join(seq),
         'so': ''.join(seq)
     }
-    return json.dumps(phrases)
+    response = jsonify(phrases)
+    response.headers['Cache-Control'] = 'no-store, no-cache'
+    return response
 
 
 @app.route('/tools/hasher/<path:victim>')
@@ -74,7 +76,9 @@ def hasher(victim):
     hashes = {}
     for h in ['md5', 'sha1', 'sha256', 'sha512']:
         hashes[h] = getattr(hashlib, h)(venc).hexdigest()
-    return json.dumps(hashes)
+    response = jsonify(hashes)
+    response.headers['Cache-Control'] = 'no-store, no-cache'
+    return response
 
 
 @app.errorhandler(404)
