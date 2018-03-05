@@ -1,7 +1,6 @@
 production:
   app_function: application.app
   aws_region: us-east-1
-  domain: anthonyschwartzman.net
   exclude:
     - .gitignore
     - __pycache__

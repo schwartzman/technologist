@@ -7,8 +7,10 @@ from flask import g
 from flask import jsonify
 from flask import render_template
 from secrets import choice
+from werkzeug.contrib.fixers import ProxyFix
 
 app = Flask(__name__)
+app.wsgi_app = ProxyFix(app.wsgi_app)
 
 
 @app.context_processor
@@ -81,7 +83,7 @@ def hasher(victim):
 
 
 @app.errorhandler(404)
-def page_not_found():
+def page_not_found(e=None):
     g.curr = 'err'
     return render_template('base.j2',
                            e404=Markup('<img src="https://http.cat/404.jpg">')
