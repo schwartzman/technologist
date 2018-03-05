@@ -45,7 +45,7 @@ def tools():
     return render_template('tools.j2')
 
 
-@app.route('/tools/<tool>/')
+@app.route('/tools/<tool>')
 def tool(tool):
     g.curr = ' '.join(['tools', tool])
     if tool in ['dicer', 'hasher']:
