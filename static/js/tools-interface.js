@@ -3,20 +3,24 @@ function req(arr) {
 }
 
 function handler(e, req) {
-	$.getJSON(req, function(res) {
-		if ( $('.res').hasClass('slumber') ) {
-			for (var i in res) {
-				$label = $('<label/>').attr('for', i).text(i);
-				$input = $('<input>').attr('type', 'text').attr('id', i).prop('readonly', true);
-				$('.res').append($label, $input);
+	e.preventDefault();
+	$.ajax({
+		dataType: 'json',
+		url: req,
+		success: function(res) {
+			if ( $('.res').hasClass('slumber') ) {
+				for (var i in res) {
+					$label = $('<label/>').attr('for', i).text(i);
+					$input = $('<input>').attr('type', 'text').attr('id', i).prop('readonly', true);
+					$('.res').append($label, $input);
+				}
+				$('.res').show().removeClass('slumber');
 			}
-			$('.res').show().removeClass('slumber');
-		}
-		for (var i in res) {
-			$('#'+i).val(res[i])
+			for (var i in res) {
+				$('#'+i).val(res[i])
+			}
 		}
 	})
-	e.preventDefault();
 }
 
 $('form.dicer').submit(function(e) {
@@ -30,11 +34,11 @@ $('form.hasher').submit(function(e) {
 	if (victim.length > 0) {
 		handler(e, req(['/tools/hasher', victim]));
 	} else {
-		$('.res').hide();
 		e.preventDefault();
+		$('.res').hide();
 	}
 });
 
-$('.res').on('click', 'label, input', function(){
+$('.res').on('click', 'label, input, textarea', function(){
 	$(this).select();
 });

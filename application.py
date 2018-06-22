@@ -58,7 +58,7 @@ def tool(tool):
 
 @app.route('/tools/dicer/<flavor>/<int:length>')
 def dicer(flavor, length):
-    with open('lists/' + flavor + '.txt') as f:
+    with open('content/lists/' + flavor + '.txt') as f:
         words = f.read().splitlines()
     seq = [choice(words) for i in range(length)]
     phrases = {

@@ -8,14 +8,18 @@
     "license": "MIT",
     "homepage": "https://github.com/schwartzman/technologist#readme",
     "devDependencies": {
-        "autoprefixer": "^7.2.5",
-        "node-sass": "^4.7.2",
-        "postcss-cli": "^4.1.1",
-        "uglify-js": "^3.3.7"
+        "autoprefixer": "^8.6.3",
+        "node-sass": "^4.9.0",
+        "postcss-cli": "^5.0.1",
+        "uglify-js": "^3.4.1"
     },
     "scripts": {
-        "build:style": "node-sass --output-style compressed static/scss/style.scss static/dist/style.css",
-        "postbuild:style": "postcss static/dist/style.css -o static/dist/style.css --use autoprefixer --no-map",
+        "serve": "python reload.py",
+        "watch:style": "watch 'npm run build:style' static/scss",
+        "watch:script": "watch 'npm run build:script' static/js",
+        "watch": "parallelshell 'npm run watch:style' 'npm run watch:script'",
+        "build:style": "node-sass --output-style compressed --output static/dist/ static/scss/style.scss",
+        "postbuild:style": "postcss static/dist/*.css --use autoprefixer --no-map --dir static/dist/",
         "build:script": "uglifyjs static/js/sites-interface.js --compress -o static/dist/sites-interface.min.js && uglifyjs static/js/tools-interface.js --compress -o static/dist/tools-interface.min.js",
         "build:bust": "git rev-parse HEAD | cut -c 1-8 > revision.txt",
         "build:py": "pip freeze > requirements.txt",
