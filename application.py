@@ -6,6 +6,8 @@ from flask import Markup
 from flask import g
 from flask import jsonify
 from flask import render_template
+from importlib_resources import open_text
+from importlib_resources import path
 from secrets import choice
 from werkzeug.contrib.fixers import ProxyFix
 
@@ -15,7 +17,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 
 @app.context_processor
 def set_buster():
-    with open('revision.txt') as f:
+    with open_text('resources', 'revision.txt') as f:
         bust = f.readline()
     return {'bust': bust}
 
@@ -29,7 +31,8 @@ def index():
 @app.route('/sites/')
 def sites():
     g.curr = 'sites'
-    con = sqlite3.connect('db.sqlite')
+    with path('resources', 'db.sqlite') as db:
+        con = sqlite3.connect(str(db))
     con.row_factory = sqlite3.Row
     cur = con.execute('''
         SELECT slug, title, ssl, link, source, blurb
@@ -58,7 +61,7 @@ def tool(tool):
 
 @app.route('/tools/dicer/<flavor>/<int:length>')
 def dicer(flavor, length):
-    with open('content/lists/' + flavor + '.txt') as f:
+    with open_text('resources.lists', flavor + '.txt') as f:
         words = f.read().splitlines()
     seq = [choice(words) for i in range(length)]
     phrases = {

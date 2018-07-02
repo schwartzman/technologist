@@ -23,7 +23,7 @@
         "build:scss": "node-sass --output-style compressed static/scss/main.scss | postcss --use autoprefixer --no-map -o static//css/main.css",
         "postbuild:scss": "cat static/css/normalize.css static/css/main.css > static/dist/main.css",
         "build:script": "uglifyjs static/js/sites-interface.js --compress -o static/dist/sites-interface.min.js && uglifyjs static/js/tools-interface.js --compress -o static/dist/tools-interface.min.js",
-        "build:bust": "git rev-parse HEAD | cut -c 1-8 > revision.txt",
+        "build:bust": "git rev-parse HEAD | cut -c 1-8 > resources/revision.txt",
         "build": "npm run build:css && npm run build:scss && npm run build:script && npm run build:bust",
         "deploy:lambda": "zappa update production",
         "deploy:s3": "aws s3 sync static s3://anthonyschwartzman.net-static/static --exclude scss/* --exclude css/* --exclude js/*",
