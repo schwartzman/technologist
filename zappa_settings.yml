@@ -7,7 +7,7 @@ production:
     - LICENSE
     - node_modules
     - package*.json
-    - prepros-6.config
+    - reload.py
     - requirements.txt
     - static
     - zappa_settings.yml
