@@ -8,6 +8,8 @@
     "license": "MIT",
     "devDependencies": {
         "autoprefixer": "^8.6.4",
+        "babel-cli": "^6.26.0",
+        "babel-preset-env": "^1.7.0",
         "node-sass": "^4.9.0",
         "normalize.css": "^8.0.0",
         "postcss-clean": "^1.1.0",
@@ -22,7 +24,7 @@
         "build:css": "postcss node_modules/normalize.css/normalize.css --use postcss-clean --no-map --dir static/css",
         "build:scss": "node-sass --output-style compressed static/scss/main.scss | postcss --use autoprefixer --no-map -o static//css/main.css",
         "postbuild:scss": "cat static/css/normalize.css static/css/main.css > static/dist/main.css",
-        "build:script": "uglifyjs static/js/sites-interface.js --compress -o static/dist/sites-interface.min.js && uglifyjs static/js/tools-interface.js --compress -o static/dist/tools-interface.min.js",
+        "build:script": "for i in static/js/*; do babel $i --presets=env | uglifyjs --compress --mangle -o static/dist/$(basename $i .js).min.js; done",
         "build:bust": "git rev-parse HEAD | cut -c 1-8 > resources/revision.txt",
         "build": "npm run build:css && npm run build:scss && npm run build:script && npm run build:bust",
         "deploy:lambda": "zappa update production",
