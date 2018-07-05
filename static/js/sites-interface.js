@@ -1,15 +1,15 @@
 const a = {
-	time: 512
+	time: 512,
+	get qtime () { return this.time / 4 },
+	get fast () { return this.time / 16 }
 }
-a.qtime = a.time / 4
-a.fast = a.time / 16
 
 const m = {
 	basebox: 184,
-	gutter: 10
+	gutter: 10,
+	get bigbox () { return this.basebox * 3 + this.gutter * 2 },
+	get fullimg () { return this.bigbox - this.gutter * 4 }
 }
-m.bigbox = m.basebox * 3 + m.gutter * 2
-m.fullimg = m.bigbox - m.gutter * 4
 
 $('#boxes')
 	.show()
