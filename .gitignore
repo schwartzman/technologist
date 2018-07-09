@@ -1,3 +1,4 @@
+.npmrc
 __pycache__
 node_modules
 revision.txt

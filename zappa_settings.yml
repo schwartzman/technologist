@@ -3,6 +3,7 @@ production:
   aws_region: us-east-1
   exclude:
     - .gitignore
+    - .npmrc
     - __pycache__
     - LICENSE
     - node_modules

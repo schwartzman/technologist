@@ -20,7 +20,7 @@
         "serve": "python reload.py",
         "watch:style": "watch 'npm run build:scss' static/scss",
         "watch:script": "watch 'npm run build:script' static/js",
-        "watch": "parallelshell 'npm run watch:scss' 'npm run watch:script'",
+        "watch": "npm run watch:style & npm run watch:script",
         "build:css": "postcss node_modules/normalize.css/normalize.css --use postcss-clean --no-map --dir static/css",
         "build:scss": "node-sass --output-style compressed static/scss/main.scss | postcss --use autoprefixer --no-map -o static//css/main.css",
         "postbuild:scss": "cat static/css/normalize.css static/css/main.css > static/dist/main.css",
@@ -31,6 +31,7 @@
         "deploy:s3": "aws s3 sync static s3://anthonyschwartzman.net-static/static --exclude scss/* --exclude css/* --exclude js/*",
         "deploy": "npm run deploy:lambda && npm run deploy:s3",
         "ship": "npm run build && npm run deploy",
-        "postinstall": "npm run build:css"
+        "postinstall": "npm run build:css",
+        "inv": "aws cloudfront create-invalidation --distribution-id $npm_config_cfDistributionID --paths '/*'"
     }
 }
