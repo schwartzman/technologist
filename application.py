@@ -8,6 +8,7 @@ from flask import jsonify
 from flask import render_template
 from importlib_resources import open_text
 from importlib_resources import path
+from importlib_resources import read_text
 from secrets import choice
 from werkzeug.contrib.fixers import ProxyFix
 
@@ -17,9 +18,7 @@ app.wsgi_app = ProxyFix(app.wsgi_app)
 
 @app.context_processor
 def set_buster():
-    with open_text('resources', 'revision.txt') as f:
-        bust = f.readline()
-    return {'bust': bust}
+    return {'bust': read_text('resources', 'revision.txt').strip()}
 
 
 @app.route('/')
