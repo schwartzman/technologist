@@ -19,7 +19,7 @@ jmespath==0.9.3
 kappa==0.7.0
 lambda-packages==0.20.0
 livereload==2.5.1 # pyup: != 2.5.2 # buggy
-MarkupSafe==1.0
+MarkupSafe==1.1.1
 placebo==0.8.1
 python-dateutil==2.7.3
 python-slugify==1.2.5
