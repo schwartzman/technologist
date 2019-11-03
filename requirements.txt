@@ -21,7 +21,7 @@ lambda-packages==0.20.0
 livereload==2.5.1 # pyup: != 2.5.2 # buggy
 MarkupSafe==1.0
 placebo==0.8.1
-python-dateutil==2.7.3
+python-dateutil==2.8.1
 python-slugify==1.2.5
 PyYAML==3.12
 requests==2.19.1
