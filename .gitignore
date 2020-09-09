@@ -1,3 +1,5 @@
+*.egg-info
+.eggs
 .npmrc
 __pycache__
 node_modules

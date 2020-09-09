@@ -41,11 +41,11 @@ function open($target) {
 }
 
 function close() {
-	// where target is some .box
+	// where $target is some open .box
 	const $target = $('.open');
 	if ($target.length) {
-		const $closy = $target.next();
-		const $obox = $target.parent();
+		const $closy = $target.next()
+		const $obox = $target.parent()
 		$obox.width(m.basebox).height(m.basebox).css('z-index', 'auto')
 		$closy.css({'display': 'none', 'opacity': 0})
 		$target.animate({width: m.basebox+'px', height: m.basebox+'px'},  a.time, () => {
