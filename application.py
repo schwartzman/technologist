@@ -6,7 +6,6 @@ from flask import Markup
 from flask import g
 from flask import jsonify
 from flask import render_template
-from importlib_resources import open_text
 from importlib_resources import path
 from importlib_resources import read_text
 from secrets import choice
