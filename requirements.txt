@@ -25,7 +25,7 @@ python-dateutil==2.7.3
 python-slugify==1.2.5
 PyYAML==3.12
 requests==2.19.1
-s3transfer==0.1.13
+s3transfer==0.4.2
 six==1.11.0
 toml==0.9.4
 tornado==5.0.2
